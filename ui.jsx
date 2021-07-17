@@ -49,7 +49,7 @@ var pp = function(root, cfg){
             }
         }
 
-        if(cns == "$Group" or "$Panel"){
+        if(cns == ("$Group" || "$Panel")){
             g = root.add("group");
             pp(g, child.children);
             continue;
