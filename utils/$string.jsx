@@ -28,7 +28,7 @@
  String.prototype.inspectFF = function() {
 
     var inspection = {},
-        parts = this.split('\\'),
+        parts = this.split('/'),
         lastPart = parts.pop(),
         numParts = parts.length,
         fStr0 = this[0],
@@ -37,6 +37,8 @@
     inspection.folderDepth = numParts;
     inspection.drive = (fStr1 == ':') ? fStr0 : null;
     inspection.isFile = false;
+    inspection.isFolder = false;
+    inspection.extension = "";
 
     /**
      * if last part contains a dot: file
